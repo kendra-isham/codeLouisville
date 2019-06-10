@@ -7,6 +7,7 @@ blue:
 #258079
 37, 128, 121
 */ 
+
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
 * { 
 	box-sizing: border-box;
@@ -62,9 +63,10 @@ h3 {
 p {
 	color: #25274D;
 }
- footer {
+
+footer {
  	
- }
+}
 
  /* Pseudo-classes */
  a:link { 
@@ -118,23 +120,21 @@ p {
 
 .background {
 	font-size: 1.5em;
-	text-align: center;
-	padding: 10px;
-}
+	padding: 10px;	
 
-.jasper, 
-.bg, 
-.louisville { 
-	max-width: 33%;
-	padding: 10px;
-}
-
-.location-container {  
-	padding: 10px;
-	display: flex;
+/*	display: flex;
+	flex-direction: row;
 	flex-wrap: wrap;
-	align-items: center;
+	justify-content: space-around;
 	text-align: center;
+	*/
+}
+
+.jasper,
+.bg,
+.louisville { 
+	/*max-width: 33%;*/
+	padding: 10px;
 }
 
 .location { 
@@ -143,6 +143,16 @@ p {
 	box-shadow: 0px 7px 7px 0px rgba(0, 0, 0, .8);
 	margin-bottom: 10px;
 	border-radius: 5%;
+}
+
+.location-container {  
+		/*padding: 10px;*/	
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		align-content: space-around;
+		text-align: center;
+		padding: 100px;
 }
 
 .Java, 
@@ -163,13 +173,12 @@ p {
 }
 
 .languages-container {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	text-align: center;
+	display: flex; 
+	flex-wrap: wrap; 
 	padding: 100px;
-	bottom-margin: 100px;	
-	letter-spacing: 0.05;
+	justify-content: center;
+	align-content: space-around;
+	text-align: center; 
 	font-size: 1.2em;
 }
 
@@ -193,13 +202,19 @@ p {
 
 /* Media Queries */
 @media (max-width: 769px) {
-
+	header{
+		 font-size: .5em;
+	}
 }
 
 @media (max-width: 1025px) {
- 
+
 }
 
-/*@media (min-width: 481px) and (max-width: 700px) {
- 
-}*/
+@media (min-width: 769px){	/*small desktop size*/
+	.jasper,
+	.bg, 
+	.louisville{
+		max-width: 33%;
+	}
+}
