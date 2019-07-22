@@ -13,8 +13,10 @@ blue:
 	box-sizing: border-box;
 }
 
+
 html {
-	height: 100%
+	height: 100%;
+
 }
 body { 
 	margin: 0;
@@ -26,7 +28,18 @@ body {
 }
 header { 
 	text-align: center;
+	font-size: .5em;
+	-webkit-text-fill-color: #fff;
+	-webkit-text-stroke-color: #29648A;
+	-webkit-text-stroke-width: 2.00px; 
 }
+
+canvas { 
+	background: linear-gradient(180deg, #29648A, transparent 100%),
+				linear-gradient(0deg, #29648A, transparent 100%);	
+	/* width: 100%;
+	height: 100%; */
+}  
 
 h1 { 
 	position: absolute;
@@ -64,13 +77,9 @@ p {
 	color: #25274D;
 }
 
-footer {
- 	
-}
-
  /* Pseudo-classes */
  a:link { 
- 	text-decoration: none;
+	text-decoration: none;
  }
 
  a:visited { 
@@ -85,19 +94,22 @@ footer {
 /* Main styles */ 
 
 .main-header {
-	background: linear-gradient(180deg, #29648A, transparent 100%),
+/*	background: linear-gradient(180deg, #29648A, transparent 100%),
 				linear-gradient(0deg, #29648A, transparent 100%),
-              	#834FC2 url('img/codeSplash.jpg') no-repeat center;
-	height: 100%;
+				  #834FC2 url('img/codeSplash.jpg') no-repeat center;
+
+	background-color: #29648A; 
+*/  height: 100%;
 	background-attachment: fixed;
   	background-position: center;
   	background-repeat: no-repeat;
   	background-size: cover;
+
 }
 
 .intro {
 	text-align: center;
-	font-size: 1.5em;
+	font-size: 1.25em;
 	letter-spacing: 0.05;
 	padding-top: 100px;
 	padding-left: 20%;
@@ -121,13 +133,6 @@ footer {
 .background {
 	font-size: 1.5em;
 	padding: 10px;	
-
-/*	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	text-align: center;
-	*/
 }
 
 .jasper,
@@ -135,6 +140,7 @@ footer {
 .louisville { 
 	/*max-width: 33%;*/
 	padding: 10px;
+	flex: 1;
 }
 
 .location { 
@@ -149,11 +155,14 @@ footer {
 		/*padding: 10px;*/	
 		display: flex;
 		flex-wrap: wrap;
+		padding: 100px;
 		justify-content: space-evenly;
 		align-content: space-around;
+		flex-direction: column;
 		text-align: center;
-		padding: 100px;
-}
+		
+	}
+
 
 .Java, 
 .C,
@@ -175,8 +184,9 @@ footer {
 .languages-container {
 	display: flex; 
 	flex-wrap: wrap; 
+	flex-direction: column;
 	padding: 100px;
-	justify-content: center;
+	justify-content: space-evenly;
 	align-content: space-around;
 	text-align: center; 
 	font-size: 1.2em;
@@ -201,20 +211,63 @@ footer {
 
 
 /* Media Queries */
-@media (max-width: 769px) {
-	header{
-		 font-size: .5em;
+
+@media (min-width: 300px){  /*small vertical phones*/
+	header {
+		font-size: .4em; 
 	}
-}
 
-@media (max-width: 1025px) {
+	.location-container {  
+		font-size: .75em;
+	}
 
+	.intro {
+		font-size: .8em;
+	}
+
+	.languages-container { 
+		display: flex; 
+		padding: 50px;
+		justify-content: space-evenly;
+		align-content: space-around;
+		text-align: center; 
+		font-size: .75em;
+	}
 }
 
 @media (min-width: 769px){	/*small desktop size*/
-	.jasper,
-	.bg, 
-	.louisville{
-		max-width: 33%;
+	header {
+		font-size: 1em;
+	}
+
+	.location-container {  
+			flex-direction: row;
+			font-size: .9em;
+	}
+
+	.intro {
+		font-size: 1.5em;
+	}
+
+	.languages-container { 
+		display: flex; 
+		flex-wrap: wrap; 
+		flex-direction: row;
+		padding: 100px 50px;
+		justify-content: space-evenly;
+		align-content: space-around;
+		text-align: center; 
+		font-size: 1.2em;
 	}
 }
+
+@media (min-width: 1025px) {
+	header {
+		font-size: 1.5em;
+	}
+
+	.location-container {  	
+		font-size: 1em;
+	}
+}
+
