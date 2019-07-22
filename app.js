@@ -1,26 +1,15 @@
-/*
- A JS program that fills a canvas with balls of random colors and sizes 
-
- ISSUES: 
-
- it is not filling the whole canvas
-*/
+//  A JS program that fills a canvas with balls of random colors and sizes 
 
 var canvas = document.getElementById("myCanvas");
-//var parent = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var color, radius;
 var balls = [];
-var cWidth, cHeight; 
 //starting points
 var rX;
 var rY;
-//make it move values
-var rDX;
-var rDY;
+
 
 resizeCanvas();
-
 //resize the canvas to fill browser window dynamically
 function resizeCanvas() {
         //visually make it dynamic
@@ -37,43 +26,37 @@ function resizeCanvas() {
     
 //random color generator 
 function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
+    var colors = ['#29648A', '#8A2964', '#648A29'];
+    for (var i = 0; i < colors.length; i++) {
+       color = colors[Math.floor(Math.random() * colors.length)];
+     }
     return color;
  }
 
- //populates and draws ONE Ball
+//populates and draws ONE Ball
 function Ball(){
    //populate variables with "random" values 
-    this.rX = Math.floor((Math.random() * 100) + 1);
-    this.rY = Math.floor((Math.random() * 100) + 1); 
-    this.rDX = Math.floor((Math.random() * 10) + 1);
-    this.rDY = Math.floor((Math.random() * 10) + 1); 
+    this.rX = Math.floor((Math.random() * window.innerWidth) + 1);
+    this.rY = Math.floor((Math.random() * window.innerHeight) + 1); 
     this.color = getRandomColor(); 
-    this.radius = Math.floor((Math.random() * 15) + 1); 
+    this.radius = Math.floor((Math.random() * 50) + 1); 
 
     this.drawBall = function(){
         ctx.beginPath();
         ctx.arc(this.rX, this.rY, this.radius, 0, 2*Math.PI);
+        ctx.lineWidth = 2;
         ctx.fillStyle = this.color; 
+        ctx.strokeStyle = "black";
+        ctx.stroke();
         ctx.fill();
         ctx.closePath();
     }
 }
 
 //populates balls[] && animates
- function draw(){
-    //populates balls[]
-    for(var i = 0; i < 10; i++){
+ function draw(){ 
+    for(var i = 0; i < 20; i++){
         balls[i] = new Ball(); 
-    }  
-
-    for(var i = 0; i < 10; i++){
         balls[i].drawBall();
-        balls[i].rX += balls[i].rDX; 
-        balls[i].rY += balls[i].rDY; 
-    }
+    }  
  }
