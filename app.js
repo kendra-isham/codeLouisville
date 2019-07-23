@@ -1,5 +1,5 @@
 //  A JS program that fills a canvas with balls of random colors and sizes 
-
+//  Prompts the user to use a different browser if using IE, as canvas is not fully supported 
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 var color, radius;
@@ -8,6 +8,18 @@ var balls = [];
 var rX;
 var rY;
 
+/* Sample function that returns boolean in case the browser is Internet Explorer*/
+function isIE() {
+    ua = navigator.userAgent;
+    /* MSIE used to detect old browsers and Trident used to newer ones*/
+    var is_ie = ua.indexOf("MSIE ") > -1 || ua.indexOf("Trident/") > -1;
+    
+    return is_ie; 
+  }
+  /* Create an alert to show if the browser is IE or not */
+  if (isIE()){
+      alert('This website is not yet fully optimized for Internet Explorer. Please use Chrome for best results.');
+  }
 
 resizeCanvas();
 //resize the canvas to fill browser window dynamically

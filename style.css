@@ -91,17 +91,11 @@ p {
 /* Main styles */ 
 
 .main-header {
-/*	background: linear-gradient(180deg, #29648A, transparent 100%),
-				linear-gradient(0deg, #29648A, transparent 100%),
-				  #834FC2 url('img/codeSplash.jpg') no-repeat center;
-
-	background-color: #29648A; 
-*/  height: 100%;
+	height: 100%;
 	background-attachment: fixed;
   	background-position: center;
   	background-repeat: no-repeat;
   	background-size: cover;
-
 }
 
 .intro {
@@ -114,8 +108,9 @@ p {
 	padding-bottom: 100px;
 	background-color: white;
 }
+
 .parallax {
-	background: linear-gradient(180deg, #29648A, transparent 100%),
+	background: linear-gradient(180deg, #8A2964, transparent 100%),
 				linear-gradient(0deg, #29648A, transparent 100%),
               	#834FC2 url('img/background3.jpg') no-repeat center;
 	height: 50%;
@@ -124,7 +119,7 @@ p {
   	background-repeat: no-repeat;
   	background-size: cover;
   	border-radius: 1px; 
-	border-style: outset 
+	border-style: outset;
 	
 }
 
@@ -136,7 +131,6 @@ p {
 .jasper,
 .bg,
 .louisville { 
-	/*max-width: 33%;*/
 	padding: 10px;
 	flex: 1;
 }
@@ -191,7 +185,7 @@ p {
 }
 
 .footer-container{
-	background: linear-gradient(180deg, #29648A, transparent 100%),
+	background: linear-gradient(180deg, #8A2964, transparent 100%),
 				linear-gradient(0deg, #29648A, transparent 100%),
               	#834FC2 url('img/background3.jpg') no-repeat center;
 	display: flex;
